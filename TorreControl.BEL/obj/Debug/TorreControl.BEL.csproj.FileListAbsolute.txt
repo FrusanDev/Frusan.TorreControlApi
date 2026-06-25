@@ -1,0 +1,9 @@
+C:\Torre_Control_Api_Github\TorreControl.BEL\bin\Debug\TorreControl.BEL.dll
+C:\Torre_Control_Api_Github\TorreControl.BEL\bin\Debug\TorreControl.BEL.pdb
+C:\Torre_Control_Api_Github\TorreControl.BEL\bin\Debug\Newtonsoft.Json.dll
+C:\Torre_Control_Api_Github\TorreControl.BEL\bin\Debug\Newtonsoft.Json.xml
+C:\Torre_Control_Api_Github\TorreControl.BEL\obj\Debug\TorreControl.BEL.csproj.AssemblyReference.cache
+C:\Torre_Control_Api_Github\TorreControl.BEL\obj\Debug\TorreControl.BEL.csproj.CoreCompileInputs.cache
+C:\Torre_Control_Api_Github\TorreControl.BEL\obj\Debug\TorreCon.356EE8BA.Up2Date
+C:\Torre_Control_Api_Github\TorreControl.BEL\obj\Debug\TorreControl.BEL.dll
+C:\Torre_Control_Api_Github\TorreControl.BEL\obj\Debug\TorreControl.BEL.pdb

@@ -1,0 +1,108 @@
+C:\API2\Utilitarios.InversionDeControl\bin\Debug\Utilitarios.InversionDeControl.dll
+C:\API2\Utilitarios.InversionDeControl\bin\Debug\Utilitarios.InversionDeControl.pdb
+C:\API2\Utilitarios.InversionDeControl\bin\Debug\CommonServiceLocator.dll
+C:\API2\Utilitarios.InversionDeControl\bin\Debug\Unity.Abstractions.dll
+C:\API2\Utilitarios.InversionDeControl\bin\Debug\Unity.Configuration.dll
+C:\API2\Utilitarios.InversionDeControl\bin\Debug\Unity.Container.dll
+C:\API2\Utilitarios.InversionDeControl\bin\Debug\Unity.Interception.Configuration.dll
+C:\API2\Utilitarios.InversionDeControl\bin\Debug\Unity.Interception.dll
+C:\API2\Utilitarios.InversionDeControl\bin\Debug\Unity.RegistrationByConvention.dll
+C:\API2\Utilitarios.InversionDeControl\bin\Debug\Unity.ServiceLocation.dll
+C:\API2\Utilitarios.InversionDeControl\bin\Debug\CommonServiceLocator.pdb
+C:\API2\Utilitarios.InversionDeControl\bin\Debug\Unity.Abstractions.pdb
+C:\API2\Utilitarios.InversionDeControl\bin\Debug\Unity.Configuration.pdb
+C:\API2\Utilitarios.InversionDeControl\bin\Debug\Unity.Container.pdb
+C:\API2\Utilitarios.InversionDeControl\bin\Debug\Unity.Interception.pdb
+C:\API2\Utilitarios.InversionDeControl\bin\Debug\Unity.Interception.Configuration.pdb
+C:\API2\Utilitarios.InversionDeControl\bin\Debug\Unity.RegistrationByConvention.pdb
+C:\API2\Utilitarios.InversionDeControl\bin\Debug\Unity.ServiceLocation.pdb
+C:\API2\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.csproj.AssemblyReference.cache
+C:\API2\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.csproj.CoreCompileInputs.cache
+C:\API2\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.csproj.CopyComplete
+C:\API2\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.dll
+C:\API2\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.pdb
+C:\ProyectosFrusan\GIT_FRUSAN\API_MaulInformativo\Utilitarios.InversionDeControl\bin\Debug\Utilitarios.InversionDeControl.dll
+C:\ProyectosFrusan\GIT_FRUSAN\API_MaulInformativo\Utilitarios.InversionDeControl\bin\Debug\Utilitarios.InversionDeControl.pdb
+C:\ProyectosFrusan\GIT_FRUSAN\API_MaulInformativo\Utilitarios.InversionDeControl\bin\Debug\CommonServiceLocator.dll
+C:\ProyectosFrusan\GIT_FRUSAN\API_MaulInformativo\Utilitarios.InversionDeControl\bin\Debug\Unity.Abstractions.dll
+C:\ProyectosFrusan\GIT_FRUSAN\API_MaulInformativo\Utilitarios.InversionDeControl\bin\Debug\Unity.Configuration.dll
+C:\ProyectosFrusan\GIT_FRUSAN\API_MaulInformativo\Utilitarios.InversionDeControl\bin\Debug\Unity.Container.dll
+C:\ProyectosFrusan\GIT_FRUSAN\API_MaulInformativo\Utilitarios.InversionDeControl\bin\Debug\Unity.Interception.Configuration.dll
+C:\ProyectosFrusan\GIT_FRUSAN\API_MaulInformativo\Utilitarios.InversionDeControl\bin\Debug\Unity.Interception.dll
+C:\ProyectosFrusan\GIT_FRUSAN\API_MaulInformativo\Utilitarios.InversionDeControl\bin\Debug\Unity.RegistrationByConvention.dll
+C:\ProyectosFrusan\GIT_FRUSAN\API_MaulInformativo\Utilitarios.InversionDeControl\bin\Debug\Unity.ServiceLocation.dll
+C:\ProyectosFrusan\GIT_FRUSAN\API_MaulInformativo\Utilitarios.InversionDeControl\bin\Debug\CommonServiceLocator.pdb
+C:\ProyectosFrusan\GIT_FRUSAN\API_MaulInformativo\Utilitarios.InversionDeControl\bin\Debug\Unity.Abstractions.pdb
+C:\ProyectosFrusan\GIT_FRUSAN\API_MaulInformativo\Utilitarios.InversionDeControl\bin\Debug\Unity.Configuration.pdb
+C:\ProyectosFrusan\GIT_FRUSAN\API_MaulInformativo\Utilitarios.InversionDeControl\bin\Debug\Unity.Container.pdb
+C:\ProyectosFrusan\GIT_FRUSAN\API_MaulInformativo\Utilitarios.InversionDeControl\bin\Debug\Unity.Interception.pdb
+C:\ProyectosFrusan\GIT_FRUSAN\API_MaulInformativo\Utilitarios.InversionDeControl\bin\Debug\Unity.Interception.Configuration.pdb
+C:\ProyectosFrusan\GIT_FRUSAN\API_MaulInformativo\Utilitarios.InversionDeControl\bin\Debug\Unity.RegistrationByConvention.pdb
+C:\ProyectosFrusan\GIT_FRUSAN\API_MaulInformativo\Utilitarios.InversionDeControl\bin\Debug\Unity.ServiceLocation.pdb
+C:\ProyectosFrusan\GIT_FRUSAN\API_MaulInformativo\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.csproj.AssemblyReference.cache
+C:\ProyectosFrusan\GIT_FRUSAN\API_MaulInformativo\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.csproj.CoreCompileInputs.cache
+C:\ProyectosFrusan\GIT_FRUSAN\API_MaulInformativo\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.csproj.CopyComplete
+C:\ProyectosFrusan\GIT_FRUSAN\API_MaulInformativo\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.dll
+C:\ProyectosFrusan\GIT_FRUSAN\API_MaulInformativo\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.pdb
+C:\EmailInformativoApi GitHub\Utilitarios.InversionDeControl\bin\Debug\Utilitarios.InversionDeControl.dll
+C:\EmailInformativoApi GitHub\Utilitarios.InversionDeControl\bin\Debug\Utilitarios.InversionDeControl.pdb
+C:\EmailInformativoApi GitHub\Utilitarios.InversionDeControl\bin\Debug\CommonServiceLocator.dll
+C:\EmailInformativoApi GitHub\Utilitarios.InversionDeControl\bin\Debug\Unity.Abstractions.dll
+C:\EmailInformativoApi GitHub\Utilitarios.InversionDeControl\bin\Debug\Unity.Configuration.dll
+C:\EmailInformativoApi GitHub\Utilitarios.InversionDeControl\bin\Debug\Unity.Container.dll
+C:\EmailInformativoApi GitHub\Utilitarios.InversionDeControl\bin\Debug\Unity.Interception.Configuration.dll
+C:\EmailInformativoApi GitHub\Utilitarios.InversionDeControl\bin\Debug\Unity.Interception.dll
+C:\EmailInformativoApi GitHub\Utilitarios.InversionDeControl\bin\Debug\Unity.RegistrationByConvention.dll
+C:\EmailInformativoApi GitHub\Utilitarios.InversionDeControl\bin\Debug\Unity.ServiceLocation.dll
+C:\EmailInformativoApi GitHub\Utilitarios.InversionDeControl\bin\Debug\CommonServiceLocator.pdb
+C:\EmailInformativoApi GitHub\Utilitarios.InversionDeControl\bin\Debug\Unity.Abstractions.pdb
+C:\EmailInformativoApi GitHub\Utilitarios.InversionDeControl\bin\Debug\Unity.Configuration.pdb
+C:\EmailInformativoApi GitHub\Utilitarios.InversionDeControl\bin\Debug\Unity.Container.pdb
+C:\EmailInformativoApi GitHub\Utilitarios.InversionDeControl\bin\Debug\Unity.Interception.pdb
+C:\EmailInformativoApi GitHub\Utilitarios.InversionDeControl\bin\Debug\Unity.Interception.Configuration.pdb
+C:\EmailInformativoApi GitHub\Utilitarios.InversionDeControl\bin\Debug\Unity.RegistrationByConvention.pdb
+C:\EmailInformativoApi GitHub\Utilitarios.InversionDeControl\bin\Debug\Unity.ServiceLocation.pdb
+C:\EmailInformativoApi GitHub\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.csproj.CoreCompileInputs.cache
+C:\EmailInformativoApi GitHub\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.csproj.CopyComplete
+C:\EmailInformativoApi GitHub\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.dll
+C:\EmailInformativoApi GitHub\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.pdb
+C:\Users\informatica\source\repos\TestApiWebSolution\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.csproj.CoreCompileInputs.cache
+C:\Users\informatica\source\repos\TestApiWebSolution\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.dll
+C:\Users\informatica\source\repos\TestApiWebSolution\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.pdb
+C:\Users\informatica\source\repos\TestApiWebSolution\Utilitarios.InversionDeControl\bin\Debug\Utilitarios.InversionDeControl.dll
+C:\Users\informatica\source\repos\TestApiWebSolution\Utilitarios.InversionDeControl\bin\Debug\Utilitarios.InversionDeControl.pdb
+C:\Users\informatica\source\repos\TestApiWebSolution\Utilitarios.InversionDeControl\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\informatica\source\repos\TestApiWebSolution\Utilitarios.InversionDeControl\bin\Debug\Unity.Abstractions.dll
+C:\Users\informatica\source\repos\TestApiWebSolution\Utilitarios.InversionDeControl\bin\Debug\Unity.Container.dll
+C:\Users\informatica\source\repos\TestApiWebSolution\Utilitarios.InversionDeControl\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\informatica\source\repos\TestApiWebSolution\Utilitarios.InversionDeControl\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\informatica\source\repos\TestApiWebSolution\Utilitarios.InversionDeControl\bin\Debug\Unity.Abstractions.pdb
+C:\Users\informatica\source\repos\TestApiWebSolution\Utilitarios.InversionDeControl\bin\Debug\Unity.Container.pdb
+C:\Users\informatica\source\repos\TestApiWebSolution\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.csproj.CopyComplete
+C:\esqueleto principal web api .net\TestApiWebSolution\Utilitarios.InversionDeControl\bin\Debug\Utilitarios.InversionDeControl.dll
+C:\esqueleto principal web api .net\TestApiWebSolution\Utilitarios.InversionDeControl\bin\Debug\Utilitarios.InversionDeControl.pdb
+C:\esqueleto principal web api .net\TestApiWebSolution\Utilitarios.InversionDeControl\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\esqueleto principal web api .net\TestApiWebSolution\Utilitarios.InversionDeControl\bin\Debug\Unity.Abstractions.dll
+C:\esqueleto principal web api .net\TestApiWebSolution\Utilitarios.InversionDeControl\bin\Debug\Unity.Container.dll
+C:\esqueleto principal web api .net\TestApiWebSolution\Utilitarios.InversionDeControl\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\esqueleto principal web api .net\TestApiWebSolution\Utilitarios.InversionDeControl\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\esqueleto principal web api .net\TestApiWebSolution\Utilitarios.InversionDeControl\bin\Debug\Unity.Abstractions.pdb
+C:\esqueleto principal web api .net\TestApiWebSolution\Utilitarios.InversionDeControl\bin\Debug\Unity.Container.pdb
+C:\esqueleto principal web api .net\TestApiWebSolution\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.csproj.AssemblyReference.cache
+C:\esqueleto principal web api .net\TestApiWebSolution\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.csproj.CoreCompileInputs.cache
+C:\esqueleto principal web api .net\TestApiWebSolution\Utilitarios.InversionDeControl\obj\Debug\Utilitar.2155D483.Up2Date
+C:\esqueleto principal web api .net\TestApiWebSolution\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.dll
+C:\esqueleto principal web api .net\TestApiWebSolution\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.pdb
+C:\Torre_Control_Api_Github\Utilitarios.InversionDeControl\bin\Debug\Utilitarios.InversionDeControl.dll
+C:\Torre_Control_Api_Github\Utilitarios.InversionDeControl\bin\Debug\Utilitarios.InversionDeControl.pdb
+C:\Torre_Control_Api_Github\Utilitarios.InversionDeControl\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Torre_Control_Api_Github\Utilitarios.InversionDeControl\bin\Debug\Unity.Abstractions.dll
+C:\Torre_Control_Api_Github\Utilitarios.InversionDeControl\bin\Debug\Unity.Container.dll
+C:\Torre_Control_Api_Github\Utilitarios.InversionDeControl\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Torre_Control_Api_Github\Utilitarios.InversionDeControl\bin\Debug\Unity.Abstractions.pdb
+C:\Torre_Control_Api_Github\Utilitarios.InversionDeControl\bin\Debug\Unity.Container.pdb
+C:\Torre_Control_Api_Github\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.csproj.AssemblyReference.cache
+C:\Torre_Control_Api_Github\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.csproj.CoreCompileInputs.cache
+C:\Torre_Control_Api_Github\Utilitarios.InversionDeControl\obj\Debug\Utilitar.2155D483.Up2Date
+C:\Torre_Control_Api_Github\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.dll
+C:\Torre_Control_Api_Github\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.pdb

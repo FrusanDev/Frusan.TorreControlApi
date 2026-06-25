@@ -1,0 +1,17 @@
+C:\Torre_Control_Api_Github\TorreControl.BLL\bin\Debug\TorreControl.BLL.dll
+C:\Torre_Control_Api_Github\TorreControl.BLL\bin\Debug\TorreControl.BLL.pdb
+C:\Torre_Control_Api_Github\TorreControl.BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Torre_Control_Api_Github\TorreControl.BLL\bin\Debug\TorreControl.BEL.dll
+C:\Torre_Control_Api_Github\TorreControl.BLL\bin\Debug\TorreControl.DAL.dll
+C:\Torre_Control_Api_Github\TorreControl.BLL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Torre_Control_Api_Github\TorreControl.BLL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Torre_Control_Api_Github\TorreControl.BLL\bin\Debug\TorreControl.BEL.pdb
+C:\Torre_Control_Api_Github\TorreControl.BLL\bin\Debug\TorreControl.DAL.pdb
+C:\Torre_Control_Api_Github\TorreControl.BLL\bin\Debug\Newtonsoft.Json.xml
+C:\Torre_Control_Api_Github\TorreControl.BLL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Torre_Control_Api_Github\TorreControl.BLL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Torre_Control_Api_Github\TorreControl.BLL\obj\Debug\TorreControl.BLL.csproj.AssemblyReference.cache
+C:\Torre_Control_Api_Github\TorreControl.BLL\obj\Debug\TorreControl.BLL.csproj.CoreCompileInputs.cache
+C:\Torre_Control_Api_Github\TorreControl.BLL\obj\Debug\TorreCon.D6BAAC67.Up2Date
+C:\Torre_Control_Api_Github\TorreControl.BLL\obj\Debug\TorreControl.BLL.dll
+C:\Torre_Control_Api_Github\TorreControl.BLL\obj\Debug\TorreControl.BLL.pdb
