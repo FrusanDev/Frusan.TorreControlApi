@@ -101,8 +101,8 @@ C:\Torre_Control_Api_Github\Utilitarios.InversionDeControl\bin\Debug\Unity.Conta
 C:\Torre_Control_Api_Github\Utilitarios.InversionDeControl\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Torre_Control_Api_Github\Utilitarios.InversionDeControl\bin\Debug\Unity.Abstractions.pdb
 C:\Torre_Control_Api_Github\Utilitarios.InversionDeControl\bin\Debug\Unity.Container.pdb
+C:\Torre_Control_Api_Github\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.dll
+C:\Torre_Control_Api_Github\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.pdb
 C:\Torre_Control_Api_Github\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.csproj.AssemblyReference.cache
 C:\Torre_Control_Api_Github\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.csproj.CoreCompileInputs.cache
 C:\Torre_Control_Api_Github\Utilitarios.InversionDeControl\obj\Debug\Utilitar.2155D483.Up2Date
-C:\Torre_Control_Api_Github\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.dll
-C:\Torre_Control_Api_Github\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.pdb

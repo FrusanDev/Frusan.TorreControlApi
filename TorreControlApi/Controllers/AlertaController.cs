@@ -2,6 +2,7 @@ using System;
 using System.Web.Http;
 using TorreControl.BEL;
 using TorreControl.BLL;
+using TorreControlApi.Authorization;
 
 namespace TorreControlApi.Controllers
 {
@@ -32,7 +33,8 @@ namespace TorreControlApi.Controllers
 
             try
             {
-                int idEvento = this.alertaBLL.IngresarAlerta(request);
+                string origenAutenticado = Request.Properties[ApiKeyAuthHandler.OrigenAutenticadoKey] as string;
+                int idEvento = this.alertaBLL.IngresarAlerta(request, origenAutenticado);
                 return Ok(new { mensaje = "Alerta registrada correctamente.", idEvento });
             }
             catch (Exception ex)

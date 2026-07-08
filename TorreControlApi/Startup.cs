@@ -5,6 +5,7 @@ using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
 using Microsoft.Practices.EnterpriseLibrary.Logging;
 using Owin;
 using System.Web.Http;
+using TorreControlApi.Authorization;
 using Unity;
 using Utilitarios.InversionDeControl;
 
@@ -16,6 +17,8 @@ namespace TorreControlApi
     {
         public void Configuration(IAppBuilder app)
         {
+            app.Use<RequireHttpsMiddleware>();
+
             IConfigurationSource configurationSource = ConfigurationSourceFactory.Create();
 
             LogWriterFactory logWriterFactory = new LogWriterFactory(configurationSource);

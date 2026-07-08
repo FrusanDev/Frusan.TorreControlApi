@@ -1,6 +1,7 @@
 using Newtonsoft.Json.Serialization;
 using System.Net.Http.Formatting;
 using System.Web.Http;
+using TorreControlApi.Authorization;
 
 namespace TorreControlApi
 {
@@ -10,6 +11,7 @@ namespace TorreControlApi
         {
             config.MapHttpAttributeRoutes();
             config.EnableCors();
+            config.MessageHandlers.Add(new ApiKeyAuthHandler());
             config.Formatters.Clear();
 
             var jsonFormatter = new JsonMediaTypeFormatter();
