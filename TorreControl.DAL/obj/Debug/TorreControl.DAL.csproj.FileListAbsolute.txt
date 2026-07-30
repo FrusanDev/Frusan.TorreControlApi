@@ -10,6 +10,6 @@ C:\Torre_Control_Api_Github\TorreControl.DAL\bin\Debug\Microsoft.Practices.Enter
 C:\Torre_Control_Api_Github\TorreControl.DAL\bin\Debug\Newtonsoft.Json.xml
 C:\Torre_Control_Api_Github\TorreControl.DAL\obj\Debug\TorreControl.DAL.csproj.AssemblyReference.cache
 C:\Torre_Control_Api_Github\TorreControl.DAL\obj\Debug\TorreControl.DAL.csproj.CoreCompileInputs.cache
-C:\Torre_Control_Api_Github\TorreControl.DAL\obj\Debug\TorreCon.8394CB4E.Up2Date
 C:\Torre_Control_Api_Github\TorreControl.DAL\obj\Debug\TorreControl.DAL.dll
 C:\Torre_Control_Api_Github\TorreControl.DAL\obj\Debug\TorreControl.DAL.pdb
+C:\Torre_Control_Api_Github\TorreControl.DAL\obj\Debug\TorreCon.8394CB4E.Up2Date

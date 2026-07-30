@@ -70,6 +70,8 @@ namespace TorreControl.DAL
             db.AddInParameter(cmd, "@Estado", DbType.String, evento.Estado);
             db.AddInParameter(cmd, "@FechaOcurrencia", DbType.DateTime, evento.FechaOcurrencia);
             db.AddInParameter(cmd, "@OrigenSistema", DbType.String, evento.OrigenSistema);
+            db.AddInParameter(cmd, "@Severidad", DbType.String, (object)evento.Severidad ?? DBNull.Value);
+            db.AddInParameter(cmd, "@DescripcionBreve", DbType.String, (object)evento.DescripcionBreve ?? DBNull.Value);
             db.AddOutParameter(cmd, "@IdEvento", DbType.Int32, 4);
 
             try

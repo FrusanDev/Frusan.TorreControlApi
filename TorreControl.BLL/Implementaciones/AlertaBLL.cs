@@ -54,7 +54,9 @@ namespace TorreControl.BLL
                 Payload = payloadJson,
                 Estado = "Pendiente",
                 FechaOcurrencia = DateTime.Now,
-                OrigenSistema = origenAutenticado
+                OrigenSistema = origenAutenticado,
+                Severidad = request.Severidad,
+                DescripcionBreve = request.DescripcionBreve
             };
 
             int idEvento = this.alertaDAL.InsertarEvento(evento);

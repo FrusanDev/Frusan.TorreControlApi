@@ -8,6 +8,8 @@ namespace TorreControl.BEL
         public int IdTipoAlerta { get; set; }
         public string Payload { get; set; }
         public string Estado { get; set; }
+        public string Severidad { get; set; }
+        public string DescripcionBreve { get; set; }
         public string AccionRespuesta { get; set; }
         public string QuienGestiono { get; set; }
         public DateTime? FechaGestion { get; set; }

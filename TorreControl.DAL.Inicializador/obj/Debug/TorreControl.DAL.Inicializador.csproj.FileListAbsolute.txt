@@ -16,6 +16,6 @@ C:\Torre_Control_Api_Github\TorreControl.DAL.Inicializador\bin\Debug\Microsoft.P
 C:\Torre_Control_Api_Github\TorreControl.DAL.Inicializador\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
 C:\Torre_Control_Api_Github\TorreControl.DAL.Inicializador\obj\Debug\TorreControl.DAL.Inicializador.csproj.AssemblyReference.cache
 C:\Torre_Control_Api_Github\TorreControl.DAL.Inicializador\obj\Debug\TorreControl.DAL.Inicializador.csproj.CoreCompileInputs.cache
-C:\Torre_Control_Api_Github\TorreControl.DAL.Inicializador\obj\Debug\TorreCon.6A6E75FD.Up2Date
 C:\Torre_Control_Api_Github\TorreControl.DAL.Inicializador\obj\Debug\TorreControl.DAL.Inicializador.dll
 C:\Torre_Control_Api_Github\TorreControl.DAL.Inicializador\obj\Debug\TorreControl.DAL.Inicializador.pdb
+C:\Torre_Control_Api_Github\TorreControl.DAL.Inicializador\obj\Debug\TorreCon.6A6E75FD.Up2Date

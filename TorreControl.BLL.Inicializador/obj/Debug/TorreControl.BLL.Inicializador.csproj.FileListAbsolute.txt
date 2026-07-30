@@ -20,6 +20,6 @@ C:\Torre_Control_Api_Github\TorreControl.BLL.Inicializador\bin\Debug\TorreContro
 C:\Torre_Control_Api_Github\TorreControl.BLL.Inicializador\bin\Debug\Newtonsoft.Json.xml
 C:\Torre_Control_Api_Github\TorreControl.BLL.Inicializador\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
 C:\Torre_Control_Api_Github\TorreControl.BLL.Inicializador\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
-C:\Torre_Control_Api_Github\TorreControl.BLL.Inicializador\obj\Debug\TorreCon.27FC326A.Up2Date
 C:\Torre_Control_Api_Github\TorreControl.BLL.Inicializador\obj\Debug\TorreControl.BLL.Inicializador.dll
 C:\Torre_Control_Api_Github\TorreControl.BLL.Inicializador\obj\Debug\TorreControl.BLL.Inicializador.pdb
+C:\Torre_Control_Api_Github\TorreControl.BLL.Inicializador\obj\Debug\TorreCon.27FC326A.Up2Date
