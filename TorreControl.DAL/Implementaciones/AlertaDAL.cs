@@ -38,7 +38,8 @@ namespace TorreControl.DAL
                             Codigo = reader["Codigo"] != DBNull.Value ? reader["Codigo"].ToString().Trim() : null,
                             Nombre = reader["Nombre"] != DBNull.Value ? reader["Nombre"].ToString().Trim() : null,
                             Area = reader["Area"] != DBNull.Value ? reader["Area"].ToString().Trim() : null,
-                            Activo = reader["Activo"] != DBNull.Value && Convert.ToBoolean(reader["Activo"])
+                            Activo = reader["Activo"] != DBNull.Value && Convert.ToBoolean(reader["Activo"]),
+                            PublicaGrupoWzap = reader["PublicaGrupoWzap"] != DBNull.Value && Convert.ToBoolean(reader["PublicaGrupoWzap"])
                         };
                     }
                 }

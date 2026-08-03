@@ -7,7 +7,11 @@
       "RelativeMoniker": "D:0:0:{F3A4B5C6-D7E8-9012-CDEF-123456789003}|TorreControl.BLL\\TorreControl.BLL.csproj|solutionrelative:torrecontrol.bll\\implementaciones\\alertabll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F1A2B3C4-D5E6-7890-ABCD-EF1234567801}|TorreControlApi\\TorreControlApi.csproj|c:\\torre_control_api_github\\torrecontrolapi\\authorization\\apikeyauthhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F1A2B3C4-D5E6-7890-ABCD-EF1234567801}|TorreControlApi\\TorreControlApi.csproj|C:\\Torre_Control_Api_Github\\torrecontrolapi\\controllers\\alertacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1A2B3C4-D5E6-7890-ABCD-EF1234567801}|TorreControlApi\\TorreControlApi.csproj|solutionrelative:torrecontrolapi\\controllers\\alertacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1A2B3C4-D5E6-7890-ABCD-EF1234567801}|TorreControlApi\\TorreControlApi.csproj|C:\\Torre_Control_Api_Github\\torrecontrolapi\\authorization\\apikeyauthhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F1A2B3C4-D5E6-7890-ABCD-EF1234567801}|TorreControlApi\\TorreControlApi.csproj|solutionrelative:torrecontrolapi\\authorization\\apikeyauthhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -21,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F1A2B3C4-D5E6-7890-ABCD-EF1234567801}|TorreControlApi\\TorreControlApi.csproj|C:\\Torre_Control_Api_Github\\torrecontrolapi\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{F1A2B3C4-D5E6-7890-ABCD-EF1234567801}|TorreControlApi\\TorreControlApi.csproj|solutionrelative:torrecontrolapi\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F1A2B3C4-D5E6-7890-ABCD-EF1234567801}|TorreControlApi\\TorreControlApi.csproj|C:\\Torre_Control_Api_Github\\torrecontrolapi\\controllers\\alertacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F1A2B3C4-D5E6-7890-ABCD-EF1234567801}|TorreControlApi\\TorreControlApi.csproj|solutionrelative:torrecontrolapi\\controllers\\alertacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F3A4B5C6-D7E8-9012-CDEF-123456789003}|TorreControl.BLL\\TorreControl.BLL.csproj|C:\\Torre_Control_Api_Github\\torrecontrol.bll\\contratos\\ialertabll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -54,20 +54,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ApiKeyAuthHandler.cs",
               "DocumentMoniker": "C:\\Torre_Control_Api_Github\\TorreControlApi\\Authorization\\ApiKeyAuthHandler.cs",
               "RelativeDocumentMoniker": "TorreControlApi\\Authorization\\ApiKeyAuthHandler.cs",
               "ToolTip": "C:\\Torre_Control_Api_Github\\TorreControlApi\\Authorization\\ApiKeyAuthHandler.cs",
               "RelativeToolTip": "TorreControlApi\\Authorization\\ApiKeyAuthHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAIApwFYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAMAwwFYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-30T19:53:16.177Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-30T19:53:16.177Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "WebApiConfig.cs",
               "DocumentMoniker": "C:\\Torre_Control_Api_Github\\TorreControlApi\\App_Start\\WebApiConfig.cs",
               "RelativeDocumentMoniker": "TorreControlApi\\App_Start\\WebApiConfig.cs",
@@ -103,13 +102,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "AlertaController.cs",
               "DocumentMoniker": "C:\\Torre_Control_Api_Github\\TorreControlApi\\Controllers\\AlertaController.cs",
               "RelativeDocumentMoniker": "TorreControlApi\\Controllers\\AlertaController.cs",
               "ToolTip": "C:\\Torre_Control_Api_Github\\TorreControlApi\\Controllers\\AlertaController.cs",
               "RelativeToolTip": "TorreControlApi\\Controllers\\AlertaController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAIA5wAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-07T19:34:37.913Z"
             },
@@ -121,14 +120,14 @@
               "RelativeDocumentMoniker": "TorreControl.BLL\\Implementaciones\\AlertaBLL.cs",
               "ToolTip": "C:\\Torre_Control_Api_Github\\TorreControl.BLL\\Implementaciones\\AlertaBLL.cs",
               "RelativeToolTip": "TorreControl.BLL\\Implementaciones\\AlertaBLL.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAhwC0AAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-25T13:01:15.103Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Web.config",
               "DocumentMoniker": "C:\\Torre_Control_Api_Github\\TorreControlApi\\Web.config",
               "RelativeDocumentMoniker": "TorreControlApi\\Web.config",
@@ -136,12 +135,11 @@
               "RelativeToolTip": "TorreControlApi\\Web.config",
               "ViewState": "AgIAABwAAAAAAAAAAAAUwCkAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2026-07-07T19:34:37.925Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-07T19:34:37.925Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AlertaDAL.cs",
               "DocumentMoniker": "C:\\Torre_Control_Api_Github\\TorreControl.DAL\\Implementaciones\\AlertaDAL.cs",
               "RelativeDocumentMoniker": "TorreControl.DAL\\Implementaciones\\AlertaDAL.cs",
@@ -149,8 +147,7 @@
               "RelativeToolTip": "TorreControl.DAL\\Implementaciones\\AlertaDAL.cs",
               "ViewState": "AgIAADMAAAAAAAAAAIAgwEIAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-07T19:34:37.926Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-03T19:12:45.336Z"
             }
           ]
         }

@@ -48,9 +48,11 @@
   <ItemGroup>
     <Compile Include="Contratos\IAlertaDAL.cs" />
     <Compile Include="Contratos\IOrigenAutorizadoDAL.cs" />
+    <Compile Include="Contratos\IRegistroLogEventoErrorDAL.cs" />
     <Compile Include="Contratos\ISpWtspSendMessageDAL.cs" />
     <Compile Include="Implementaciones\AlertaDAL.cs" />
     <Compile Include="Implementaciones\OrigenAutorizadoDAL.cs" />
+    <Compile Include="Implementaciones\RegistroLogEventoErrorDAL.cs" />
     <Compile Include="Implementaciones\SpWtspSendMessageDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
