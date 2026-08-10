@@ -16,5 +16,12 @@ namespace TorreControl.BEL
         /// mostrarla en la grilla y en las notificaciones sin tener que parsear el Payload.
         /// </summary>
         public string DescripcionBreve { get; set; }
+
+        /// <summary>
+        /// Texto exacto del mensaje WhatsApp a enviar, opcional. Lo arma el sistema origen con su propio
+        /// formato de negocio (ej. resumen con emojis); si no se envía, se usa un mensaje genérico.
+        /// Se usa tanto para el grupo Torre de Control como para el envío individual a responsables.
+        /// </summary>
+        public string MensajeWhatsapp { get; set; }
     }
 }

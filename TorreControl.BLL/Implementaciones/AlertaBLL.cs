@@ -38,7 +38,8 @@ namespace TorreControl.BLL
         #region IAlertaBLL Implementations
 
         /// <summary>
-        /// Valida el tipo de alerta, inserta el evento en la tabla central TC_Evento y dispara la notificación WhatsApp al grupo Torre de Control
+        /// Valida el tipo de alerta, inserta el evento en la tabla central TC_Evento y dispara la notificación WhatsApp
+        /// al grupo Torre de Control y, si corresponde, a los responsables del tipo de alerta
         /// </summary>
         /// <param name="request">DTO con código de tipo de alerta y payload JSON</param>
         /// <param name="origenAutenticado">Código del sistema origen autenticado por API Key; es el único valor de confianza para OrigenSistema</param>
@@ -65,12 +66,18 @@ namespace TorreControl.BLL
                     FechaOcurrencia = DateTime.Now,
                     OrigenSistema = origenAutenticado,
                     Severidad = request.Severidad,
-                    DescripcionBreve = request.DescripcionBreve
+                    DescripcionBreve = request.DescripcionBreve,
+                    MensajeWhatsapp = request.MensajeWhatsapp
                 };
 
                 int idEvento = this.alertaDAL.InsertarEvento(evento);
 
-                NotificarWhatsApp(tipoAlerta, evento);
+                string mensajeWhatsapp = !string.IsNullOrWhiteSpace(evento.MensajeWhatsapp)
+                    ? evento.MensajeWhatsapp
+                    : ConstruirMensajeGenerico(tipoAlerta, evento);
+
+                NotificarGrupo(tipoAlerta, mensajeWhatsapp);
+                NotificarResponsables(tipoAlerta, mensajeWhatsapp);
 
                 return idEvento;
             }
@@ -131,11 +138,30 @@ namespace TorreControl.BLL
         }
 
         /// <summary>
-        /// Construye el mensaje de alerta y lo envía al grupo WhatsApp Torre de Control mediante el SP SpWtspSendMessage
+        /// Construye el mensaje genérico de alerta (Área/Alerta/Origen/Fecha) usado cuando el sistema
+        /// origen no envía un MensajeWhatsapp propio en el request
         /// </summary>
         /// <param name="tipoAlerta">Datos del tipo de alerta (área, nombre)</param>
         /// <param name="evento">Datos del evento recién insertado (origen, fecha)</param>
-        private void NotificarWhatsApp(TipoAlertaBEL tipoAlerta, EventoBEL evento)
+        /// <returns>Texto del mensaje a enviar por WhatsApp</returns>
+        private string ConstruirMensajeGenerico(TipoAlertaBEL tipoAlerta, EventoBEL evento)
+        {
+            var body = new StringBuilder();
+            body.AppendFormat("*Torre de Control*{0}", Environment.NewLine);
+            body.AppendFormat("Área: {0}{1}", tipoAlerta.Area, Environment.NewLine);
+            body.AppendFormat("Alerta: {0}{1}", tipoAlerta.Nombre, Environment.NewLine);
+            body.AppendFormat("Origen: {0}{1}", evento.OrigenSistema, Environment.NewLine);
+            body.AppendFormat("Fecha: {0}", evento.FechaOcurrencia.ToString("dd/MM/yyyy HH:mm:ss"));
+            return body.ToString();
+        }
+
+        /// <summary>
+        /// Envía el mensaje al grupo único WhatsApp Torre de Control mediante el SP SpWtspSendMessage,
+        /// solo si el tipo de alerta tiene habilitada la publicación al grupo (PublicaGrupoWzap)
+        /// </summary>
+        /// <param name="tipoAlerta">Datos del tipo de alerta (define si corresponde publicar al grupo)</param>
+        /// <param name="mensaje">Texto ya armado del mensaje a enviar</param>
+        private void NotificarGrupo(TipoAlertaBEL tipoAlerta, string mensaje)
         {
             try
             {
@@ -147,14 +173,46 @@ namespace TorreControl.BLL
                 if (string.IsNullOrEmpty(grupoId))
                     return;
 
-                var body = new StringBuilder();
-                body.AppendFormat("*Torre de Control*{0}", Environment.NewLine);
-                body.AppendFormat("Área: {0}{1}", tipoAlerta.Area, Environment.NewLine);
-                body.AppendFormat("Alerta: {0}{1}", tipoAlerta.Nombre, Environment.NewLine);
-                body.AppendFormat("Origen: {0}{1}", evento.OrigenSistema, Environment.NewLine);
-                body.AppendFormat("Fecha: {0}", evento.FechaOcurrencia.ToString("dd/MM/yyyy HH:mm:ss"));
+                this.spWtspSendMessageDAL.EnviarMensajeWhatsapp(grupoId, mensaje);
+            }
+            catch
+            {
+                // No propagar excepciones de notificación — el insert ya se realizó
+            }
+        }
 
-                this.spWtspSendMessageDAL.EnviarMensajeWhatsapp(grupoId, body.ToString());
+        /// <summary>
+        /// Envía el mensaje individualmente a cada responsable activo del tipo de alerta, solo si el tipo
+        /// tiene habilitado el envío a responsables (AlertaResponsableWzap) y tiene responsables asociados
+        /// </summary>
+        /// <param name="tipoAlerta">Datos del tipo de alerta (define si corresponde notificar a responsables)</param>
+        /// <param name="mensaje">Texto ya armado del mensaje a enviar</param>
+        private void NotificarResponsables(TipoAlertaBEL tipoAlerta, string mensaje)
+        {
+            try
+            {
+                if (!tipoAlerta.AlertaResponsableWzap)
+                    return;
+
+                var responsables = this.alertaDAL.ObtenerResponsables(tipoAlerta.IdTipoAlerta);
+
+                if (responsables == null || responsables.Count == 0)
+                    return;
+
+                foreach (var responsable in responsables)
+                {
+                    if (string.IsNullOrEmpty(responsable.Telefono))
+                        continue;
+
+                    try
+                    {
+                        this.spWtspSendMessageDAL.EnviarMensajeWhatsapp(responsable.Telefono, mensaje);
+                    }
+                    catch
+                    {
+                        // No interrumpir el envío al resto de responsables por la falla de uno
+                    }
+                }
             }
             catch
             {

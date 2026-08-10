@@ -8,5 +8,6 @@ namespace TorreControl.BEL
         public string Area { get; set; }
         public bool Activo { get; set; }
         public bool PublicaGrupoWzap { get; set; }
+        public bool AlertaResponsableWzap { get; set; }
     }
 }

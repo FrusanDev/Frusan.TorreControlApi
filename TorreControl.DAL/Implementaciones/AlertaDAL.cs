@@ -39,7 +39,8 @@ namespace TorreControl.DAL
                             Nombre = reader["Nombre"] != DBNull.Value ? reader["Nombre"].ToString().Trim() : null,
                             Area = reader["Area"] != DBNull.Value ? reader["Area"].ToString().Trim() : null,
                             Activo = reader["Activo"] != DBNull.Value && Convert.ToBoolean(reader["Activo"]),
-                            PublicaGrupoWzap = reader["PublicaGrupoWzap"] != DBNull.Value && Convert.ToBoolean(reader["PublicaGrupoWzap"])
+                            PublicaGrupoWzap = reader["PublicaGrupoWzap"] != DBNull.Value && Convert.ToBoolean(reader["PublicaGrupoWzap"]),
+                            AlertaResponsableWzap = reader["AlertaResponsableWzap"] != DBNull.Value && Convert.ToBoolean(reader["AlertaResponsableWzap"])
                         };
                     }
                 }
@@ -73,6 +74,7 @@ namespace TorreControl.DAL
             db.AddInParameter(cmd, "@OrigenSistema", DbType.String, evento.OrigenSistema);
             db.AddInParameter(cmd, "@Severidad", DbType.String, (object)evento.Severidad ?? DBNull.Value);
             db.AddInParameter(cmd, "@DescripcionBreve", DbType.String, (object)evento.DescripcionBreve ?? DBNull.Value);
+            db.AddInParameter(cmd, "@MensajeWhatsapp", DbType.String, (object)evento.MensajeWhatsapp ?? DBNull.Value);
             db.AddOutParameter(cmd, "@IdEvento", DbType.Int32, 4);
 
             try
@@ -115,6 +117,7 @@ namespace TorreControl.DAL
                         {
                             IdResponsable = reader["IdResponsable"] != DBNull.Value ? Convert.ToInt32(reader["IdResponsable"]) : 0,
                             IdTipoAlerta = idTipoAlerta,
+                            IdUsuario = reader["IdUsuario"] != DBNull.Value ? reader["IdUsuario"].ToString().Trim() : null,
                             Nombre = reader["Nombre"] != DBNull.Value ? reader["Nombre"].ToString().Trim() : null,
                             Telefono = reader["Telefono"] != DBNull.Value ? reader["Telefono"].ToString().Trim() : null,
                             Email = reader["Email"] != DBNull.Value ? reader["Email"].ToString().Trim() : null,
@@ -131,7 +134,6 @@ namespace TorreControl.DAL
             finally
             {
                 cmd?.Dispose();
-                returnValue = null;
             }
         }
 

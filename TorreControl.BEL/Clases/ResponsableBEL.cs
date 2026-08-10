@@ -4,6 +4,7 @@ namespace TorreControl.BEL
     {
         public int IdResponsable { get; set; }
         public int IdTipoAlerta { get; set; }
+        public string IdUsuario { get; set; }
         public string Nombre { get; set; }
         public string Telefono { get; set; }
         public string Email { get; set; }
