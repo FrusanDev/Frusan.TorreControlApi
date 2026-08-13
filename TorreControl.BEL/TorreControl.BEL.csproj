@@ -39,6 +39,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\EventoBEL.cs" />
+    <Compile Include="Clases\EventoConsultaBEL.cs" />
     <Compile Include="Clases\IngresarAlertaRequest.cs" />
     <Compile Include="Clases\OrigenAutorizadoBEL.cs" />
     <Compile Include="Clases\RegistroLogEventoBEL.cs" />

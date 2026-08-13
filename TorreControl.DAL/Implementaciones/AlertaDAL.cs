@@ -137,6 +137,62 @@ namespace TorreControl.DAL
             }
         }
 
+        /// <summary>
+        /// Obtiene los eventos registrados en TC_Evento dentro de un rango de fechas y, opcionalmente,
+        /// filtrados por estado, mediante el SP TC_SP_ObtenerEventos
+        /// </summary>
+        /// <param name="fechaDesde"></param>
+        /// <param name="fechaHasta"></param>
+        /// <param name="estado"></param>
+        /// <returns></returns>
+        public List<EventoConsultaBEL> ObtenerEventos(DateTime? fechaDesde, DateTime? fechaHasta, string estado)
+        {
+            var returnValue = new List<EventoConsultaBEL>();
+
+            var databaseSetting = (DatabaseSettings)ConfigurationManager.GetSection("dataConfiguration");
+            Database db = DatabaseFactory.CreateDatabase(databaseSetting.DefaultDatabase);
+
+            DbCommand cmd = db.GetStoredProcCommand("TC_SP_ObtenerEventos");
+            db.AddInParameter(cmd, "@FechaDesde", DbType.DateTime, (object)fechaDesde ?? DBNull.Value);
+            db.AddInParameter(cmd, "@FechaHasta", DbType.DateTime, (object)fechaHasta ?? DBNull.Value);
+            db.AddInParameter(cmd, "@Estado", DbType.String, (object)estado ?? DBNull.Value);
+
+            try
+            {
+                using (IDataReader reader = db.ExecuteReader(cmd))
+                {
+                    while (reader.Read())
+                    {
+                        returnValue.Add(new EventoConsultaBEL
+                        {
+                            IdEvento = reader["IdEvento"] != DBNull.Value ? Convert.ToInt32(reader["IdEvento"]) : 0,
+                            CodigoTipoAlerta = reader["CodigoTipoAlerta"] != DBNull.Value ? reader["CodigoTipoAlerta"].ToString().Trim() : null,
+                            NombreTipoAlerta = reader["NombreTipoAlerta"] != DBNull.Value ? reader["NombreTipoAlerta"].ToString().Trim() : null,
+                            Area = reader["Area"] != DBNull.Value ? reader["Area"].ToString().Trim() : null,
+                            Estado = reader["Estado"] != DBNull.Value ? reader["Estado"].ToString().Trim() : null,
+                            Severidad = reader["Severidad"] != DBNull.Value ? reader["Severidad"].ToString().Trim() : null,
+                            DescripcionBreve = reader["DescripcionBreve"] != DBNull.Value ? reader["DescripcionBreve"].ToString().Trim() : null,
+                            OrigenSistema = reader["OrigenSistema"] != DBNull.Value ? reader["OrigenSistema"].ToString().Trim() : null,
+                            FechaOcurrencia = reader["FechaOcurrencia"] != DBNull.Value ? Convert.ToDateTime(reader["FechaOcurrencia"]) : default(DateTime),
+                            FechaGestion = reader["FechaGestion"] != DBNull.Value ? (DateTime?)Convert.ToDateTime(reader["FechaGestion"]) : null,
+                            AccionRespuesta = reader["AccionRespuesta"] != DBNull.Value ? reader["AccionRespuesta"].ToString() : null,
+                            QuienGestiono = reader["QuienGestiono"] != DBNull.Value ? reader["QuienGestiono"].ToString().Trim() : null,
+                            Responsables = reader["Responsables"] != DBNull.Value ? reader["Responsables"].ToString() : null
+                        });
+                    }
+                }
+                return returnValue;
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                cmd?.Dispose();
+            }
+        }
+
         #endregion
 
         #region IDisposable Implementation

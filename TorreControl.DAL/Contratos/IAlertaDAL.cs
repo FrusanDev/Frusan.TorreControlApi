@@ -26,5 +26,15 @@ namespace TorreControl.DAL
         /// <param name="idTipoAlerta"></param>
         /// <returns></returns>
         List<ResponsableBEL> ObtenerResponsables(int idTipoAlerta);
+
+        /// <summary>
+        /// Obtiene los eventos registrados en TC_Evento dentro de un rango de fechas y, opcionalmente,
+        /// filtrados por estado. Si no se especifican fechas, el SP acota por defecto a los últimos 7 días
+        /// </summary>
+        /// <param name="fechaDesde"></param>
+        /// <param name="fechaHasta"></param>
+        /// <param name="estado"></param>
+        /// <returns></returns>
+        List<EventoConsultaBEL> ObtenerEventos(DateTime? fechaDesde, DateTime? fechaHasta, string estado);
     }
 }

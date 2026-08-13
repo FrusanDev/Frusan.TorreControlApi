@@ -88,6 +88,25 @@ namespace TorreControl.BLL
             }
         }
 
+        /// <summary>
+        /// Obtiene los eventos registrados dentro de un rango de fechas y, opcionalmente, filtrados por estado,
+        /// para consumo de dashboards externos (GET /api/alertas)
+        /// </summary>
+        /// <param name="fechaDesde">Límite inferior del rango; si es null, el SP acota por defecto a los últimos 7 días</param>
+        /// <param name="fechaHasta">Límite superior del rango; si es null, el SP usa el día de hoy</param>
+        /// <param name="estado">Filtro opcional por Estado ('Pendiente' o 'Gestionada')</param>
+        /// <returns>Lista de eventos que cumplen los filtros, más recientes primero</returns>
+        public List<EventoConsultaBEL> ObtenerEventos(DateTime? fechaDesde, DateTime? fechaHasta, string estado)
+        {
+            if (fechaDesde.HasValue && fechaHasta.HasValue && fechaDesde.Value > fechaHasta.Value)
+                throw new Exception("FechaDesde no puede ser posterior a FechaHasta.");
+
+            if (!string.IsNullOrWhiteSpace(estado) && estado != "Pendiente" && estado != "Gestionada")
+                throw new Exception("Estado debe ser 'Pendiente' o 'Gestionada'.");
+
+            return this.alertaDAL.ObtenerEventos(fechaDesde, fechaHasta, estado);
+        }
+
         #endregion
 
         #region Métodos privados
