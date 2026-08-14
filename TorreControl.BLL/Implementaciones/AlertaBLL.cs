@@ -62,7 +62,7 @@ namespace TorreControl.BLL
                 {
                     IdTipoAlerta = tipoAlerta.IdTipoAlerta,
                     Payload = payloadJson,
-                    Estado = "Pendiente",
+                    Estado = "No atendido",
                     FechaOcurrencia = DateTime.Now,
                     OrigenSistema = origenAutenticado,
                     Severidad = request.Severidad,
@@ -94,15 +94,15 @@ namespace TorreControl.BLL
         /// </summary>
         /// <param name="fechaDesde">Límite inferior del rango; si es null, el SP acota por defecto a los últimos 7 días</param>
         /// <param name="fechaHasta">Límite superior del rango; si es null, el SP usa el día de hoy</param>
-        /// <param name="estado">Filtro opcional por Estado ('Pendiente' o 'Gestionada')</param>
+        /// <param name="estado">Filtro opcional por Estado ('No atendido', 'Atendido' o 'Cerrado')</param>
         /// <returns>Lista de eventos que cumplen los filtros, más recientes primero</returns>
         public List<EventoConsultaBEL> ObtenerEventos(DateTime? fechaDesde, DateTime? fechaHasta, string estado)
         {
             if (fechaDesde.HasValue && fechaHasta.HasValue && fechaDesde.Value > fechaHasta.Value)
                 throw new Exception("FechaDesde no puede ser posterior a FechaHasta.");
 
-            if (!string.IsNullOrWhiteSpace(estado) && estado != "Pendiente" && estado != "Gestionada")
-                throw new Exception("Estado debe ser 'Pendiente' o 'Gestionada'.");
+            if (!string.IsNullOrWhiteSpace(estado) && estado != "No atendido" && estado != "Atendido" && estado != "Cerrado")
+                throw new Exception("Estado debe ser 'No atendido', 'Atendido' o 'Cerrado'.");
 
             return this.alertaDAL.ObtenerEventos(fechaDesde, fechaHasta, estado);
         }
