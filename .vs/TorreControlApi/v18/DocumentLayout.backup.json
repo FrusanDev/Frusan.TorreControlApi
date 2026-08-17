@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Torre_Control_Api_Github\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F3A4B5C6-D7E8-9012-CDEF-123456789003}|TorreControl.BLL\\TorreControl.BLL.csproj|C:\\Torre_Control_Api_Github\\torrecontrol.bll\\implementaciones\\alertabll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F3A4B5C6-D7E8-9012-CDEF-123456789003}|TorreControl.BLL\\TorreControl.BLL.csproj|c:\\torre_control_api_github\\torrecontrol.bll\\implementaciones\\alertabll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F3A4B5C6-D7E8-9012-CDEF-123456789003}|TorreControl.BLL\\TorreControl.BLL.csproj|solutionrelative:torrecontrol.bll\\implementaciones\\alertabll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4A5B6C7-D8E9-0123-DEF0-234567890004}|TorreControl.DAL\\TorreControl.DAL.csproj|c:\\torre_control_api_github\\torrecontrol.dal\\implementaciones\\alertadal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F4A5B6C7-D8E9-0123-DEF0-234567890004}|TorreControl.DAL\\TorreControl.DAL.csproj|C:\\Torre_Control_Api_Github\\torrecontrol.dal\\implementaciones\\alertadal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F4A5B6C7-D8E9-0123-DEF0-234567890004}|TorreControl.DAL\\TorreControl.DAL.csproj|solutionrelative:torrecontrol.dal\\implementaciones\\alertadal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -120,7 +120,7 @@
               "RelativeDocumentMoniker": "TorreControl.BLL\\Implementaciones\\AlertaBLL.cs",
               "ToolTip": "C:\\Torre_Control_Api_Github\\TorreControl.BLL\\Implementaciones\\AlertaBLL.cs",
               "RelativeToolTip": "TorreControl.BLL\\Implementaciones\\AlertaBLL.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAMAwwGIAAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-25T13:01:15.103Z",
               "EditorCaption": ""
@@ -148,8 +148,7 @@
               "RelativeToolTip": "TorreControl.DAL\\Implementaciones\\AlertaDAL.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-03T19:12:45.336Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-03T19:12:45.336Z"
             }
           ]
         }
