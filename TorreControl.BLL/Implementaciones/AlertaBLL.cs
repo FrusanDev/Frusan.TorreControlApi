@@ -15,6 +15,7 @@ namespace TorreControl.BLL
         private IAlertaDAL alertaDAL;
         private ISpWtspSendMessageDAL spWtspSendMessageDAL;
         private IRegistroLogEventoErrorDAL registroLogEventoErrorDAL;
+        private IEmailSenderDAL emailSenderDAL;
 
         #endregion
 
@@ -26,11 +27,13 @@ namespace TorreControl.BLL
         /// <param name="alertaDAL"></param>
         /// <param name="spWtspSendMessageDAL"></param>
         /// <param name="registroLogEventoErrorDAL"></param>
-        public AlertaBLL(IAlertaDAL alertaDAL, ISpWtspSendMessageDAL spWtspSendMessageDAL, IRegistroLogEventoErrorDAL registroLogEventoErrorDAL)
+        /// <param name="emailSenderDAL"></param>
+        public AlertaBLL(IAlertaDAL alertaDAL, ISpWtspSendMessageDAL spWtspSendMessageDAL, IRegistroLogEventoErrorDAL registroLogEventoErrorDAL, IEmailSenderDAL emailSenderDAL)
         {
             this.alertaDAL = alertaDAL;
             this.spWtspSendMessageDAL = spWtspSendMessageDAL;
             this.registroLogEventoErrorDAL = registroLogEventoErrorDAL;
+            this.emailSenderDAL = emailSenderDAL;
         }
 
         #endregion
@@ -67,7 +70,9 @@ namespace TorreControl.BLL
                     OrigenSistema = origenAutenticado,
                     Severidad = request.Severidad,
                     DescripcionBreve = request.DescripcionBreve,
-                    MensajeWhatsapp = request.MensajeWhatsapp
+                    MensajeWhatsapp = request.MensajeWhatsapp,
+                    AsuntoCorreo = request.AsuntoCorreo,
+                    MensajeCorreo = request.MensajeCorreo
                 };
 
                 int idEvento = this.alertaDAL.InsertarEvento(evento);
@@ -78,6 +83,17 @@ namespace TorreControl.BLL
 
                 NotificarGrupo(tipoAlerta, mensajeWhatsapp);
                 NotificarResponsables(tipoAlerta, mensajeWhatsapp);
+
+                // Envío de correo a responsables — implementado y listo, pero la llamada queda comentada
+                // a propósito (decisión de Gonzalo, 18/08/2026) hasta confirmar credenciales SMTP vigentes
+                // y activarlo explícitamente. Ver NotificarResponsablesEmail más abajo.
+                // string asuntoCorreo = !string.IsNullOrWhiteSpace(evento.AsuntoCorreo)
+                //     ? evento.AsuntoCorreo
+                //     : ConstruirAsuntoCorreoGenerico(tipoAlerta);
+                // string mensajeCorreo = !string.IsNullOrWhiteSpace(evento.MensajeCorreo)
+                //     ? evento.MensajeCorreo
+                //     : ConstruirMensajeCorreoGenerico(tipoAlerta, evento);
+                // NotificarResponsablesEmail(tipoAlerta, asuntoCorreo, mensajeCorreo);
 
                 return idEvento;
             }
@@ -239,6 +255,78 @@ namespace TorreControl.BLL
             }
         }
 
+        /// <summary>
+        /// Construye el asunto genérico de correo usado cuando el sistema origen no envía un AsuntoCorreo
+        /// propio en el request
+        /// </summary>
+        /// <param name="tipoAlerta">Datos del tipo de alerta (nombre)</param>
+        /// <returns>Texto del asunto del correo</returns>
+        private string ConstruirAsuntoCorreoGenerico(TipoAlertaBEL tipoAlerta)
+        {
+            return $"Torre de Control — {tipoAlerta.Nombre}";
+        }
+
+        /// <summary>
+        /// Construye el cuerpo HTML genérico de correo (Área/Alerta/Origen/Fecha) usado cuando el sistema
+        /// origen no envía un MensajeCorreo propio en el request
+        /// </summary>
+        /// <param name="tipoAlerta">Datos del tipo de alerta (área, nombre)</param>
+        /// <param name="evento">Datos del evento recién insertado (origen, fecha)</param>
+        /// <returns>Cuerpo HTML del correo a enviar</returns>
+        private string ConstruirMensajeCorreoGenerico(TipoAlertaBEL tipoAlerta, EventoBEL evento)
+        {
+            var body = new StringBuilder();
+            body.Append("<div style='font-family:Arial,Helvetica,sans-serif;color:#333333'>");
+            body.Append("<h3 style='margin:0 0 8px'>Torre de Control</h3>");
+            body.AppendFormat("<p><strong>Área:</strong> {0}</p>", tipoAlerta.Area);
+            body.AppendFormat("<p><strong>Alerta:</strong> {0}</p>", tipoAlerta.Nombre);
+            body.AppendFormat("<p><strong>Origen:</strong> {0}</p>", evento.OrigenSistema);
+            body.AppendFormat("<p><strong>Fecha:</strong> {0}</p>", evento.FechaOcurrencia.ToString("dd/MM/yyyy HH:mm:ss"));
+            body.Append("</div>");
+            return body.ToString();
+        }
+
+        /// <summary>
+        /// Envía el correo individualmente a cada responsable activo del tipo de alerta, solo si el tipo
+        /// tiene habilitado el envío de correo a responsables (AlertaResponsableEmail) y tiene responsables
+        /// con email asociado. Sin llamador activo todavía — ver comentario en IngresarAlerta.
+        /// </summary>
+        /// <param name="tipoAlerta">Datos del tipo de alerta (define si corresponde notificar a responsables)</param>
+        /// <param name="asunto">Asunto ya armado del correo a enviar</param>
+        /// <param name="cuerpoHtml">Cuerpo HTML ya armado del correo a enviar</param>
+        private void NotificarResponsablesEmail(TipoAlertaBEL tipoAlerta, string asunto, string cuerpoHtml)
+        {
+            try
+            {
+                if (!tipoAlerta.AlertaResponsableEmail)
+                    return;
+
+                var responsables = this.alertaDAL.ObtenerResponsables(tipoAlerta.IdTipoAlerta);
+
+                if (responsables == null || responsables.Count == 0)
+                    return;
+
+                foreach (var responsable in responsables)
+                {
+                    if (string.IsNullOrEmpty(responsable.Email))
+                        continue;
+
+                    try
+                    {
+                        this.emailSenderDAL.EnviarCorreo(responsable.Email, asunto, cuerpoHtml);
+                    }
+                    catch
+                    {
+                        // No interrumpir el envío al resto de responsables por la falla de uno
+                    }
+                }
+            }
+            catch
+            {
+                // No propagar excepciones de notificación — el insert ya se realizó
+            }
+        }
+
         #endregion
 
         #region IDisposable Implementation
@@ -267,6 +355,7 @@ namespace TorreControl.BLL
             this.alertaDAL?.Dispose();
             this.spWtspSendMessageDAL?.Dispose();
             this.registroLogEventoErrorDAL?.Dispose();
+            this.emailSenderDAL?.Dispose();
         }
 
         #endregion

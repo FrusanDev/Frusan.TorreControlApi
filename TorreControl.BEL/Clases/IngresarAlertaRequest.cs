@@ -23,5 +23,17 @@ namespace TorreControl.BEL
         /// Se usa tanto para el grupo Torre de Control como para el envío individual a responsables.
         /// </summary>
         public string MensajeWhatsapp { get; set; }
+
+        /// <summary>
+        /// Asunto del correo a enviar a los responsables del tipo de alerta, opcional. Si no se envía,
+        /// se usa un asunto genérico armado con el nombre del tipo de alerta.
+        /// </summary>
+        public string AsuntoCorreo { get; set; }
+
+        /// <summary>
+        /// Cuerpo HTML exacto del correo a enviar a los responsables del tipo de alerta, opcional. Lo arma
+        /// el sistema origen con su propio formato de negocio; si no se envía, se usa un cuerpo genérico.
+        /// </summary>
+        public string MensajeCorreo { get; set; }
     }
 }

@@ -9,5 +9,6 @@ namespace TorreControl.BEL
         public bool Activo { get; set; }
         public bool PublicaGrupoWzap { get; set; }
         public bool AlertaResponsableWzap { get; set; }
+        public bool AlertaResponsableEmail { get; set; }
     }
 }

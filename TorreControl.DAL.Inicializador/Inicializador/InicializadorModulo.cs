@@ -11,6 +11,7 @@ namespace TorreControl.DAL.Inicializador
         {
             registrar.RegistrarTipo<IAlertaDAL, AlertaDAL>(false);
             registrar.RegistrarTipo<ISpWtspSendMessageDAL, SpWtspSendMessageDAL>(false);
+            registrar.RegistrarTipo<IEmailSenderDAL, EmailSenderDAL>(false);
             registrar.RegistrarTipo<IOrigenAutorizadoDAL, OrigenAutorizadoDAL>(false);
             registrar.RegistrarTipo<IRegistroLogEventoErrorDAL, RegistroLogEventoErrorDAL>(false);
         }

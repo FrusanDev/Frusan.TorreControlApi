@@ -40,7 +40,8 @@ namespace TorreControl.DAL
                             Area = reader["Area"] != DBNull.Value ? reader["Area"].ToString().Trim() : null,
                             Activo = reader["Activo"] != DBNull.Value && Convert.ToBoolean(reader["Activo"]),
                             PublicaGrupoWzap = reader["PublicaGrupoWzap"] != DBNull.Value && Convert.ToBoolean(reader["PublicaGrupoWzap"]),
-                            AlertaResponsableWzap = reader["AlertaResponsableWzap"] != DBNull.Value && Convert.ToBoolean(reader["AlertaResponsableWzap"])
+                            AlertaResponsableWzap = reader["AlertaResponsableWzap"] != DBNull.Value && Convert.ToBoolean(reader["AlertaResponsableWzap"]),
+                            AlertaResponsableEmail = reader["AlertaResponsableEmail"] != DBNull.Value && Convert.ToBoolean(reader["AlertaResponsableEmail"])
                         };
                     }
                 }
@@ -75,6 +76,8 @@ namespace TorreControl.DAL
             db.AddInParameter(cmd, "@Severidad", DbType.String, (object)evento.Severidad ?? DBNull.Value);
             db.AddInParameter(cmd, "@DescripcionBreve", DbType.String, (object)evento.DescripcionBreve ?? DBNull.Value);
             db.AddInParameter(cmd, "@MensajeWhatsapp", DbType.String, (object)evento.MensajeWhatsapp ?? DBNull.Value);
+            db.AddInParameter(cmd, "@AsuntoCorreo", DbType.String, (object)evento.AsuntoCorreo ?? DBNull.Value);
+            db.AddInParameter(cmd, "@MensajeCorreo", DbType.String, (object)evento.MensajeCorreo ?? DBNull.Value);
             db.AddOutParameter(cmd, "@IdEvento", DbType.Int32, 4);
 
             try
