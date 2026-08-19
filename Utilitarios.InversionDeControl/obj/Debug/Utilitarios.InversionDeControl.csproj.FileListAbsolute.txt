@@ -106,3 +106,16 @@ C:\Torre_Control_Api_Github\Utilitarios.InversionDeControl\obj\Debug\Utilitarios
 C:\Torre_Control_Api_Github\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.csproj.AssemblyReference.cache
 C:\Torre_Control_Api_Github\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.csproj.CoreCompileInputs.cache
 C:\Torre_Control_Api_Github\Utilitarios.InversionDeControl\obj\Debug\Utilitar.2155D483.Up2Date
+C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\Utilitarios.InversionDeControl\bin\Debug\Utilitarios.InversionDeControl.dll
+C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\Utilitarios.InversionDeControl\bin\Debug\Utilitarios.InversionDeControl.pdb
+C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\Utilitarios.InversionDeControl\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\Utilitarios.InversionDeControl\bin\Debug\Unity.Abstractions.dll
+C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\Utilitarios.InversionDeControl\bin\Debug\Unity.Container.dll
+C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\Utilitarios.InversionDeControl\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\Utilitarios.InversionDeControl\bin\Debug\Unity.Abstractions.pdb
+C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\Utilitarios.InversionDeControl\bin\Debug\Unity.Container.pdb
+C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.csproj.AssemblyReference.cache
+C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.csproj.CoreCompileInputs.cache
+C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\Utilitarios.InversionDeControl\obj\Debug\Utilitar.2155D483.Up2Date
+C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.dll
+C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\Utilitarios.InversionDeControl\obj\Debug\Utilitarios.InversionDeControl.pdb

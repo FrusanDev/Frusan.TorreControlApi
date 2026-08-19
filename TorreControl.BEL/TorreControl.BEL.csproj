@@ -38,6 +38,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\AlertaRegistradaBEL.cs" />
     <Compile Include="Clases\EventoBEL.cs" />
     <Compile Include="Clases\EventoConsultaBEL.cs" />
     <Compile Include="Clases\IngresarAlertaRequest.cs" />

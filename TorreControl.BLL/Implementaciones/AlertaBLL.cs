@@ -46,8 +46,8 @@ namespace TorreControl.BLL
         /// </summary>
         /// <param name="request">DTO con código de tipo de alerta y payload JSON</param>
         /// <param name="origenAutenticado">Código del sistema origen autenticado por API Key; es el único valor de confianza para OrigenSistema</param>
-        /// <returns>ID del evento generado en TC_Evento</returns>
-        public int IngresarAlerta(IngresarAlertaRequest request, string origenAutenticado)
+        /// <returns>Id del evento generado en TC_Evento más área/código/severidad, para que el controller difunda la notificación de alerta nueva</returns>
+        public AlertaRegistradaBEL IngresarAlerta(IngresarAlertaRequest request, string origenAutenticado)
         {
             var tipoAlerta = this.alertaDAL.ObtenerTipoAlerta(request.CodigoTipoAlerta);
             if (tipoAlerta == null || !tipoAlerta.Activo)
@@ -95,7 +95,14 @@ namespace TorreControl.BLL
                 //     : ConstruirMensajeCorreoGenerico(tipoAlerta, evento);
                 // NotificarResponsablesEmail(tipoAlerta, asuntoCorreo, mensajeCorreo);
 
-                return idEvento;
+                return new AlertaRegistradaBEL
+                {
+                    IdEvento = idEvento,
+                    Area = tipoAlerta.Area,
+                    CodigoTipoAlerta = tipoAlerta.Codigo,
+                    Severidad = evento.Severidad,
+                    DescripcionBreve = evento.DescripcionBreve
+                };
             }
             catch (Exception ex)
             {
