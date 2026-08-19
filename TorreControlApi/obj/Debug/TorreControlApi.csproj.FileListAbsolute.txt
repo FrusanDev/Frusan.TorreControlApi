@@ -288,3 +288,12 @@ C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\TorreControlApi\bin\roslyn\
 C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\TorreControlApi\bin\roslyn\vbc.rsp
 C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\TorreControlApi\bin\roslyn\VBCSCompiler.exe
 C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\TorreControlApi\bin\roslyn\VBCSCompiler.exe.config
+C:\Torre_Control_Api_Github\TorreControlApi\bin\XmlDocument.xml
+C:\Torre_Control_Api_Github\TorreControlApi\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Torre_Control_Api_Github\TorreControlApi\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Torre_Control_Api_Github\TorreControlApi\bin\Microsoft.Owin.Cors.dll
+C:\Torre_Control_Api_Github\TorreControlApi\bin\Microsoft.AspNet.SignalR.Core.pdb
+C:\Torre_Control_Api_Github\TorreControlApi\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Torre_Control_Api_Github\TorreControlApi\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+C:\Torre_Control_Api_Github\TorreControlApi\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Torre_Control_Api_Github\TorreControlApi\bin\Microsoft.Owin.Cors.xml

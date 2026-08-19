@@ -546,6 +546,14 @@
             <param name="request">Datos de la alerta a registrar: código de tipo de alerta, payload con los datos del evento y, opcionalmente, mensaje de WhatsApp propio del origen.</param>
             <returns>HTTP 200 con el id del evento creado, o 400 si el tipo de alerta no existe/no está activo.</returns>
         </member>
+        <member name="M:TorreControlApi.Controllers.AlertaController.NotificarAlertaNueva(TorreControl.BEL.AlertaRegistradaBEL)">
+            <summary>
+            Difunde la alerta recien registrada a la Torre de Control (FrusanNet) via el hub de
+            SignalR — solo idEvento/area/codigo/severidad, sin el Payload completo. No debe romper
+            el alta de la alerta si falla (ej. nadie conectado todavia).
+            </summary>
+            <param name="registrada">Datos minimos del evento recien insertado</param>
+        </member>
         <member name="M:TorreControlApi.Controllers.AlertaController.Get(System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.String)">
             <summary>
             Endpoint GET que retorna los eventos registrados, filtrables por rango de fecha y estado.
@@ -556,6 +564,13 @@
             <param name="fechaHasta">Fecha de término del rango a consultar (opcional).</param>
             <param name="estado">Filtra por estado del evento: "No atendido", "Atendido" o "Cerrado" (opcional).</param>
             <returns>Lista de eventos registrados que cumplen el filtro.</returns>
+        </member>
+        <member name="T:TorreControlApi.Hubs.AlertasHub">
+            <summary>
+            Hub de solo difusion para la Torre de Control: AlertaController llama a
+            Clients.All.NuevaAlerta(idEvento) justo despues de insertar en TC_Evento (Post exitoso).
+            No expone metodos invocables desde el cliente — los navegadores solo escuchan.
+            </summary>
         </member>
     </members>
 </doc>
