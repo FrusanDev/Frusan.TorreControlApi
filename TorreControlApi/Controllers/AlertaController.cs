@@ -1,8 +1,10 @@
+using Microsoft.AspNet.SignalR;
 using System;
 using System.Web.Http;
 using TorreControl.BEL;
 using TorreControl.BLL;
 using TorreControlApi.Authorization;
+using TorreControlApi.Hubs;
 
 namespace TorreControlApi.Controllers
 {
@@ -34,12 +36,42 @@ namespace TorreControlApi.Controllers
             try
             {
                 string origenAutenticado = Request.Properties[ApiKeyAuthHandler.OrigenAutenticadoKey] as string;
-                int idEvento = this.alertaBLL.IngresarAlerta(request, origenAutenticado);
-                return Ok(new { mensaje = "Alerta registrada correctamente.", idEvento });
+                AlertaRegistradaBEL registrada = this.alertaBLL.IngresarAlerta(request, origenAutenticado);
+
+                NotificarAlertaNueva(registrada);
+
+                return Ok(new { mensaje = "Alerta registrada correctamente.", idEvento = registrada.IdEvento });
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Difunde la alerta recien registrada a la Torre de Control (FrusanNet) via el hub de
+        /// SignalR — solo idEvento/area/codigo/severidad, sin el Payload completo. No debe romper
+        /// el alta de la alerta si falla (ej. nadie conectado todavia).
+        /// </summary>
+        /// <param name="registrada">Datos minimos del evento recien insertado</param>
+        private void NotificarAlertaNueva(AlertaRegistradaBEL registrada)
+        {
+            try
+            {
+                var hubContext = GlobalHost.ConnectionManager.GetHubContext<AlertasHub>();
+                hubContext.Clients.All.NuevaAlerta(new
+                {
+                    idEvento = registrada.IdEvento,
+                    area = registrada.Area,
+                    codigo = registrada.CodigoTipoAlerta,
+                    severidad = registrada.Severidad,
+                    descripcionBreve = registrada.DescripcionBreve
+                });
+            }
+            catch
+            {
+                // No propagar: la alerta ya quedo registrada, la notificacion en tiempo real es
+                // un extra, no debe hacer fallar la respuesta 200 al sistema origen.
             }
         }
 

@@ -7,3 +7,12 @@ C:\Torre_Control_Api_Github\TorreControl.BEL\obj\Debug\TorreControl.BEL.pdb
 C:\Torre_Control_Api_Github\TorreControl.BEL\obj\Debug\TorreControl.BEL.csproj.AssemblyReference.cache
 C:\Torre_Control_Api_Github\TorreControl.BEL\obj\Debug\TorreControl.BEL.csproj.CoreCompileInputs.cache
 C:\Torre_Control_Api_Github\TorreControl.BEL\obj\Debug\TorreCon.356EE8BA.Up2Date
+C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\TorreControl.BEL\bin\Debug\TorreControl.BEL.dll
+C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\TorreControl.BEL\bin\Debug\TorreControl.BEL.pdb
+C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\TorreControl.BEL\bin\Debug\Newtonsoft.Json.dll
+C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\TorreControl.BEL\bin\Debug\Newtonsoft.Json.xml
+C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\TorreControl.BEL\obj\Debug\TorreControl.BEL.csproj.AssemblyReference.cache
+C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\TorreControl.BEL\obj\Debug\TorreControl.BEL.csproj.CoreCompileInputs.cache
+C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\TorreControl.BEL\obj\Debug\TorreCon.356EE8BA.Up2Date
+C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\TorreControl.BEL\obj\Debug\TorreControl.BEL.dll
+C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\TorreControl.BEL\obj\Debug\TorreControl.BEL.pdb
