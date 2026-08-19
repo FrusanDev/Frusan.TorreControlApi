@@ -139,3 +139,4 @@ C:\Torre_Control_Api_Github\TorreControlApi\bin\TorreControl.BLL.Inicializador.d
 C:\Torre_Control_Api_Github\TorreControlApi\bin\TorreControl.DAL.Inicializador.dll
 C:\Torre_Control_Api_Github\TorreControlApi\bin\TorreControl.BLL.Inicializador.pdb
 C:\Torre_Control_Api_Github\TorreControlApi\bin\TorreControl.DAL.Inicializador.pdb
+C:\Torre_Control_Api_Github\TorreControlApi\bin\XmlDocument.xml
