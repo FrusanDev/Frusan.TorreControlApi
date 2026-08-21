@@ -288,3 +288,5 @@ C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\TorreControlApi\bin\roslyn\
 C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\TorreControlApi\bin\roslyn\vbc.rsp
 C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\TorreControlApi\bin\roslyn\VBCSCompiler.exe
 C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\TorreControlApi\bin\roslyn\VBCSCompiler.exe.config
+C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\TorreControlApi\bin\Microsoft.Owin.Security.dll
+C:\ProyectosFrusan\GIT_FRUSAN\Frusan.TorreControlApi\TorreControlApi\bin\Microsoft.Owin.Security.xml

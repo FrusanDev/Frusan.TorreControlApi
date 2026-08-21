@@ -40,7 +40,12 @@ namespace TorreControlApi
             // severidad, sin datos sensibles del payload. CORS restringido a ese origen exacto (no
             // AllowAll). Rama OWIN aparte, no pasa por ApiKeyAuthHandler (ese handler esta
             // registrado solo en el pipeline de Web API, ver WebApiConfig.Register).
-            var corsPolicyExtranet = new CorsPolicy { AllowAnyMethod = true, AllowAnyHeader = true };
+            // SupportsCredentials=true: el cliente jQuery.signalR manda la negociacion cross-domain
+            // con withCredentials=true (cookies incluidas) - sin esto el browser bloquea la respuesta
+            // con "Access-Control-Allow-Credentials must be 'true'" (bug real 2026-08-19, probado en
+            // extranet.frusan.cl). Con SupportsCredentials=true, AllowAnyOrigin/"*" no es valido -
+            // por eso el origen debe ser exacto (ya lo era).
+            var corsPolicyExtranet = new CorsPolicy { AllowAnyMethod = true, AllowAnyHeader = true, SupportsCredentials = true };
             corsPolicyExtranet.Origins.Add("https://extranet.frusan.cl");
 
             app.Map("/signalr", signalr =>
