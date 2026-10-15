@@ -84,16 +84,16 @@ namespace TorreControl.BLL
                 NotificarGrupo(tipoAlerta, mensajeWhatsapp);
                 NotificarResponsables(tipoAlerta, mensajeWhatsapp);
 
-                // Envío de correo a responsables — implementado y listo, pero la llamada queda comentada
-                // a propósito (decisión de Gonzalo, 18/08/2026) hasta confirmar credenciales SMTP vigentes
-                // y activarlo explícitamente. Ver NotificarResponsablesEmail más abajo.
-                // string asuntoCorreo = !string.IsNullOrWhiteSpace(evento.AsuntoCorreo)
-                //     ? evento.AsuntoCorreo
-                //     : ConstruirAsuntoCorreoGenerico(tipoAlerta);
-                // string mensajeCorreo = !string.IsNullOrWhiteSpace(evento.MensajeCorreo)
-                //     ? evento.MensajeCorreo
-                //     : ConstruirMensajeCorreoGenerico(tipoAlerta, evento);
-                // NotificarResponsablesEmail(tipoAlerta, asuntoCorreo, mensajeCorreo);
+                // Envío de correo a responsables por Microsoft Graph (Outlook 365) — activado por Gonzalo
+                // el 30/09/2026 tras probar el App Registration AzureAdMail:*. Solo envía si el tipo de alerta
+                // tiene "Email Resp." habilitado. Ver NotificarResponsablesEmail más abajo.
+                string asuntoCorreo = !string.IsNullOrWhiteSpace(evento.AsuntoCorreo)
+                    ? evento.AsuntoCorreo
+                    : ConstruirAsuntoCorreoGenerico(tipoAlerta);
+                string mensajeCorreo = !string.IsNullOrWhiteSpace(evento.MensajeCorreo)
+                    ? evento.MensajeCorreo
+                    : ConstruirMensajeCorreoGenerico(tipoAlerta, evento);
+                NotificarResponsablesEmail(tipoAlerta, asuntoCorreo, mensajeCorreo);
 
                 return new AlertaRegistradaBEL
                 {
@@ -143,7 +143,8 @@ namespace TorreControl.BLL
         /// <param name="origenSistema">Sistema origen autenticado que hizo la request, para contexto en el log</param>
         /// <param name="errorDescripcion">Mensaje de error a registrar</param>
         /// <param name="notificarEmergencia">Si es true, además envía WhatsApp al grupo de emergencia</param>
-        private void RegistrarLogError(string origenSistema, string errorDescripcion, bool notificarEmergencia)
+        /// <param name="nombreTarea">Nombre de la tarea con que queda el registro en el log (permite filtrar por tipo de falla)</param>
+        private void RegistrarLogError(string origenSistema, string errorDescripcion, bool notificarEmergencia, string nombreTarea = "IngresarAlerta")
         {
             try
             {
@@ -154,7 +155,7 @@ namespace TorreControl.BLL
                 {
                     FechaHora = DateTime.Now,
                     Servidor = servidor,
-                    NombreTarea = "IngresarAlerta",
+                    NombreTarea = nombreTarea,
                     ErrorDescripcion = descripcionConOrigen
                 });
 
@@ -166,7 +167,7 @@ namespace TorreControl.BLL
                         var body = new StringBuilder();
                         body.AppendFormat("*Torre de Control API - Error*{0}", Environment.NewLine);
                         body.AppendFormat("Servidor: {0}{1}", servidor, Environment.NewLine);
-                        body.AppendFormat("Tarea: IngresarAlerta{0}", Environment.NewLine);
+                        body.AppendFormat("Tarea: {0}{1}", nombreTarea, Environment.NewLine);
                         body.AppendFormat("Error: {0}", descripcionConOrigen);
 
                         this.spWtspSendMessageDAL.EnviarMensajeWhatsapp(grupoIdEmergencia, body.ToString());
@@ -217,9 +218,10 @@ namespace TorreControl.BLL
 
                 this.spWtspSendMessageDAL.EnviarMensajeWhatsapp(grupoId, mensaje);
             }
-            catch
+            catch (Exception ex)
             {
-                // No propagar excepciones de notificación — el insert ya se realizó
+                // No propagar excepciones de notificación — el insert ya se realizó; solo se deja registro en el log
+                RegistrarLogError(tipoAlerta.Codigo, "Falla al publicar en el grupo WhatsApp: " + ex.Message, false, "NotificarWhatsappGrupo");
             }
         }
 
@@ -243,23 +245,53 @@ namespace TorreControl.BLL
 
                 foreach (var responsable in responsables)
                 {
-                    if (string.IsNullOrEmpty(responsable.Telefono))
+                    var telefono = NormalizarTelefono(responsable.Telefono);
+
+                    if (string.IsNullOrEmpty(telefono))
                         continue;
 
                     try
                     {
-                        this.spWtspSendMessageDAL.EnviarMensajeWhatsapp(responsable.Telefono, mensaje);
+                        this.spWtspSendMessageDAL.EnviarMensajeWhatsapp(telefono, mensaje);
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        // No interrumpir el envío al resto de responsables por la falla de uno
+                        // No interrumpir el envío al resto de responsables por la falla de uno; se deja registro en el log
+                        RegistrarLogError(tipoAlerta.Codigo, string.Format("Falla al enviar WhatsApp a {0} ({1}): {2}", responsable.Nombre, telefono, ex.Message), false, "NotificarWhatsappResponsable");
                     }
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                // No propagar excepciones de notificación — el insert ya se realizó
+                // No propagar excepciones de notificación — el insert ya se realizó; solo se deja registro en el log
+                RegistrarLogError(tipoAlerta.Codigo, "Falla al notificar por WhatsApp a responsables: " + ex.Message, false, "NotificarWhatsappResponsable");
             }
+        }
+
+        /// <summary>
+        /// Normaliza un teléfono para WhatsApp dejando solo los dígitos y el "+" inicial (si lo tenía),
+        /// eliminando espacios, guiones, paréntesis y cualquier otro carácter. Ej.: "+569 6140 9135" → "+56961409135"
+        /// </summary>
+        /// <param name="telefono">Teléfono tal como está registrado en el mantenedor de responsables</param>
+        /// <returns>Teléfono normalizado, o null si viene vacío o no contiene dígitos</returns>
+        private static string NormalizarTelefono(string telefono)
+        {
+            if (string.IsNullOrWhiteSpace(telefono))
+                return null;
+
+            var normalizado = new StringBuilder();
+            var textoLimpio = telefono.Trim();
+
+            if (textoLimpio.StartsWith("+"))
+                normalizado.Append('+');
+
+            foreach (var caracter in textoLimpio)
+            {
+                if (char.IsDigit(caracter))
+                    normalizado.Append(caracter);
+            }
+
+            return normalizado.ToString().Trim('+').Length == 0 ? null : normalizado.ToString();
         }
 
         /// <summary>
@@ -296,7 +328,7 @@ namespace TorreControl.BLL
         /// <summary>
         /// Envía el correo individualmente a cada responsable activo del tipo de alerta, solo si el tipo
         /// tiene habilitado el envío de correo a responsables (AlertaResponsableEmail) y tiene responsables
-        /// con email asociado. Sin llamador activo todavía — ver comentario en IngresarAlerta.
+        /// con email asociado. Se invoca desde IngresarAlerta y envía por Microsoft Graph (EmailSenderDAL).
         /// </summary>
         /// <param name="tipoAlerta">Datos del tipo de alerta (define si corresponde notificar a responsables)</param>
         /// <param name="asunto">Asunto ya armado del correo a enviar</param>
@@ -322,15 +354,17 @@ namespace TorreControl.BLL
                     {
                         this.emailSenderDAL.EnviarCorreo(responsable.Email, asunto, cuerpoHtml);
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        // No interrumpir el envío al resto de responsables por la falla de uno
+                        // No interrumpir el envío al resto de responsables por la falla de uno; se deja registro en el log
+                        RegistrarLogError(tipoAlerta.Codigo, string.Format("Falla al enviar correo a {0} ({1}): {2}", responsable.Nombre, responsable.Email, ex.Message), false, "NotificarEmailResponsable");
                     }
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                // No propagar excepciones de notificación — el insert ya se realizó
+                // No propagar excepciones de notificación — el insert ya se realizó; solo se deja registro en el log
+                RegistrarLogError(tipoAlerta.Codigo, "Falla al notificar por correo a responsables: " + ex.Message, false, "NotificarEmailResponsable");
             }
         }
 

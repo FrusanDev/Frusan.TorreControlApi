@@ -44,6 +44,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contratos\IAlertaDAL.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="Contratos\ISpWtspSendMessageDAL.cs" />
     <Compile Include="Implementaciones\AlertaDAL.cs" />
     <Compile Include="Implementaciones\EmailSenderDAL.cs" />
+    <Compile Include="Implementaciones\GraphAuthHelper.cs" />
     <Compile Include="Implementaciones\OrigenAutorizadoDAL.cs" />
     <Compile Include="Implementaciones\RegistroLogEventoErrorDAL.cs" />
     <Compile Include="Implementaciones\SpWtspSendMessageDAL.cs" />
