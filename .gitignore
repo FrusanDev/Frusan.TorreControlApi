@@ -428,3 +428,15 @@ FodyWeavers.xsd
 *.msm
 *.msp
 *.sql
+
+# Configuracion con credenciales: se versiona solo la plantilla .example (ver CLAUDE.md global / EmailInformativoApi)
+/TorreControlApi/Web.config
+/TorreControlApi/bin/TorreControlApi.dll.config
+/TorreControlApi/connectionStrings.config
+/TorreControlApi/appSettings.secrets.config
+appSettings.secrets.config
+connectionStrings.config
+*.pfx
+*.msi
+*.exe.config
+/TorreControlApi/Log/

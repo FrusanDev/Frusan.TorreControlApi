@@ -1,0 +1,25 @@
+#!/bin/sh
+# pre-commit: bloquea instaladores, configs con secretos y claves en claro (incluye binarios)
+# Activar una vez por clon: git config core.hooksPath .githooks
+fail=0
+
+# 1) Archivos prohibidos por nombre/extension (se permiten las plantillas .example)
+bad=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '\.(msi|cab|zip|bak|pfx)$|\.exe\.config$|\.dll\.config$|\.respaldo|(^|/)setup\.exe$|(^|/)appSettings\.secrets\.config$|(^|/)connectionStrings\.config$|^TorreControlApi/Web\.config$' | grep -Ev '\.example$|/packages/|^packages/|bin/roslyn/')
+if [ -n "$bad" ]; then
+  echo "BLOQUEADO: archivos que no deben versionarse:"; echo "$bad" | sed 's/^/  - /'
+  fail=1
+fi
+
+# 2) Claves en claro dentro del contenido agregado (-a: tambien en binarios). No se imprime el valor.
+pat='sk-ant-[A-Za-z0-9_-]{10,}|[0-9]{8,10}:AA[A-Za-z0-9_-]{33}|(Password|Pwd)=[^;" <]{4,}|ClientSecret" value="[A-Za-z0-9~._-]{20,}"'
+hits=$(git diff --cached -a -U0 --diff-filter=ACMR | grep -E '^\+' | grep -vE '^\+\+\+' | grep -Ec "$pat")
+if [ "$hits" -gt 0 ]; then
+  echo "BLOQUEADO: $hits linea(s) agregadas parecen claves/contrasenas en claro. Archivos:"
+  git diff --cached -a -U0 --diff-filter=ACMR | awk -v p="$pat" '/^\+\+\+ /{f=$2} /^\+[^+]/ && $0 ~ p {print "  - " f}' | sort -u
+  fail=1
+fi
+
+if [ "$fail" -ne 0 ]; then
+  echo "Corrige y vuelve a intentar (no uses --no-verify)."; exit 1
+fi
+exit 0
