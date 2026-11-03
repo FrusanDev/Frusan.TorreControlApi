@@ -17,7 +17,8 @@ namespace TorreControl.DAL
 
         /// <summary>
         /// Envía un correo HTML a un único destinatario por Microsoft Graph (Outlook 365), desde el buzón
-        /// configurado en GraphMailRemitente y con el App Registration AzureAdMail:* de Web.config
+        /// configurado en GraphMailRemitente y con el App Registration AzureAdMail:* de Web.config,
+        /// mostrando "Torre Control Frusan" como nombre del remitente
         /// </summary>
         /// <param name="destinatario"></param>
         /// <param name="asunto"></param>
@@ -52,6 +53,9 @@ namespace TorreControl.DAL
                 { "message", new JObject
                     {
                         { "subject", asunto },
+                        // Nombre visible del remitente (pedido de Max 02/11/2026). Exchange puede ignorarlo
+                        // y mostrar el nombre del buzón; si pasa, usar un buzón propio de Torre Control
+                        { "from", new JObject { { "emailAddress", new JObject { { "name", "Torre Control Frusan" }, { "address", remitente } } } } },
                         { "body", new JObject { { "contentType", "HTML" }, { "content", cuerpoHtml } } },
                         { "toRecipients", new JArray(
                             new JObject { { "emailAddress", new JObject { { "address", destinatario } } } }) }

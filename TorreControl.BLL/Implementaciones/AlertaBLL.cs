@@ -296,13 +296,14 @@ namespace TorreControl.BLL
 
         /// <summary>
         /// Construye el asunto genérico de correo usado cuando el sistema origen no envía un AsuntoCorreo
-        /// propio en el request
+        /// propio en el request. Desde el 03/11/2026 es solo el nombre de la alerta, sin el prefijo
+        /// "Torre de Control" (el remitente ya lo indica; pedido de Max)
         /// </summary>
         /// <param name="tipoAlerta">Datos del tipo de alerta (nombre)</param>
         /// <returns>Texto del asunto del correo</returns>
         private string ConstruirAsuntoCorreoGenerico(TipoAlertaBEL tipoAlerta)
         {
-            return $"Torre de Control — {tipoAlerta.Nombre}";
+            return tipoAlerta.Nombre;
         }
 
         /// <summary>
