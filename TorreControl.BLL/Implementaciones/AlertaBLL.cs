@@ -216,7 +216,15 @@ namespace TorreControl.BLL
                 if (string.IsNullOrEmpty(grupoId))
                     return;
 
-                this.spWtspSendMessageDAL.EnviarMensajeWhatsapp(grupoId, mensaje);
+                // Grupo nuevo (instancia propia): si hay instancia y token en config se usa SpWtspSendMessageEx;
+                // si faltan, se mantiene el SP original (comportamiento anterior)
+                var instancia = ConfigurationManager.AppSettings["instanciaWhatsappGrupoTorreControl"];
+                var token = ConfigurationManager.AppSettings["tokenWhatsappGrupoTorreControl"];
+
+                if (!string.IsNullOrEmpty(instancia) && !string.IsNullOrEmpty(token))
+                    this.spWtspSendMessageDAL.EnviarMensajeWhatsappEx(instancia, token, grupoId, mensaje);
+                else
+                    this.spWtspSendMessageDAL.EnviarMensajeWhatsapp(grupoId, mensaje);
             }
             catch (Exception ex)
             {
